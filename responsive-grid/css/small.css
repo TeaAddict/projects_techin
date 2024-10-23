@@ -1,0 +1,18 @@
+@import url(/css/style.css);
+
+body {
+    margin-top: 3.325rem;
+    margin-bottom: 3.955rem;
+    margin-left: 4.2rem;
+    margin-right: 4.9rem;
+}
+
+header {
+    margin-bottom: 2.745rem;
+}
+
+.cities {
+    display: grid;
+    gap: 2.6rem;
+    grid-template-columns: 1fr;
+}

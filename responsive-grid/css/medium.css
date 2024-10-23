@@ -1,0 +1,51 @@
+@import url(/css/style.css);
+
+body {
+    margin-top: 3.9rem;
+    margin-bottom: 5.545rem;
+    margin-left: 6rem;
+    margin-right: 5.2rem;
+}
+
+header {
+    margin-bottom: 2.57rem;
+}
+
+.cities {
+    display: grid;
+    gap: 2.6rem;
+    grid-template-areas: 
+    "new-york san-diego arizona"
+    "miami los-angeles hawaii"
+    "florida chicago washington"
+    ;
+}
+
+.san-diego {
+    grid-area: san-diego;
+}
+.los-angeles {
+    grid-area: los-angeles;
+}
+.chicago {
+    grid-area: chicago;
+}
+.new-york {
+    grid-area: new-york;
+}
+.miami {
+    grid-area: miami;
+}
+.florida {
+    grid-area: florida;
+}
+.arizona {
+    grid-area: arizona;
+}
+.hawaii {
+    grid-area: hawaii;
+}
+.washington {
+    grid-area: washington;
+}
+
