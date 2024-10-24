@@ -1,0 +1,36 @@
+
+header {
+    width: 100%;
+    height: 10.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary);
+    border-radius: 2rem;
+    padding-left: 2.4rem;
+    padding-right: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.header__span {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.header__span--italic {
+    font-style: italic;
+    font-weight: 300;
+}
+
+.nav__ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    gap: 5rem;
+}
+
+.nav__a {
+    display: block;
+    font-weight: 300;
+    font-size: 1.6rem;
+}
