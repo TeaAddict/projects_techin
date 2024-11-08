@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <script src="src/functions.js" defer></script>
+  </head>
+  <body class="bg-black text-white">
+    <main class="h-screen flex flex-col gap-4 justify-center items-center">
+      <h1 class="text-3xl font-bold uppercase">Percentage calculator</h1>
+      <form
+        id="percentageForm"
+        class="flex flex-col items-center gap-3"
+        action=""
+      >
+        <div>
+          <span>What is</span>
+          <input
+            name="percentage"
+            id="percentage"
+            class="text-black pl-1 w-20"
+          />
+          <span>% of</span>
+          <input name="number" id="number" class="text-black pl-1 w-20 ml-1" />
+          <span>?</span>
+        </div>
+
+        <input
+          type="submit"
+          class="border-2 bg-gray-500 p-1 uppercase cursor-pointer"
+          value="Calculate"
+        />
+        <p
+          class="border-2 bg-gray-300 text-black p-1 min-w-40 text-center"
+          id="result"
+        >
+          Result: #
+        </p>
+      </form>
+    </main>
+  </body>
+</html>
