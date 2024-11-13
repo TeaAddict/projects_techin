@@ -1,0 +1,16 @@
+Build your website according to this user story:
+
+Imagine a cozy, festive website decked with snowflakes and twinkling lights, where every visitor is greeted with a cheery holiday prompt upon entering:
+🎄 "Season's greetings! What flavors of froyo would you like to enjoy today? Simply type them in, separated by commas, and let us whip up a winter wonderland of flavors just for you!" 🎄
+
+The visitor, filled with holiday cheer, types in: "vanilla,vanilla,vanilla,strawberry,coffee,coffee" and presses enter.
+
+With a little holiday magic (and a peek at the browser console), a festive table appears, showing exactly how many of each froyo flavor they’ve chosen:
+
+🎅 Froyo Flavor Totals: 🎅
+
+Vanilla: 3 servings
+Coffee: 2 servings
+Strawberry: 1 serving
+The visitor now sees their custom holiday froyo list, neatly counted and ready to enjoy! 🎁
+

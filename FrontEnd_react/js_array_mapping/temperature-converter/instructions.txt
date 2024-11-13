@@ -1,0 +1,11 @@
+
+
+In this project, you will be building out the functionality of a simple app that asks a user for some numbers and then calculates some temperature conversions according to the user's input.
+
+This page will prompt the user to enter a number, and we will convert it from Fahrenheit to Celsius and let the user know if the temperature is hot or cold.
+
+Project Requirements:
+    1) Complete three functions, convertToCelsius(), createMessage() and rand().
+    2) Define your convertToCelsius() function to take a Fahrenheit temperature, convert it to Celsius, and return the value. To convert the value from F to C, subtract 32 from the F value, then multiply it by 5/9.
+    3) The createMessage() function should take the Fahrenheit temperature and the Celsius equivalent as arguments and determine how it feels based on certain temperature ranges. It should return a message telling the user the conversion from Fahrenheit to Celsius and how that feels. (See the chart about function definition.)
+    4) Define the rand() function to take a limit and return a random number between 0 and that number.
