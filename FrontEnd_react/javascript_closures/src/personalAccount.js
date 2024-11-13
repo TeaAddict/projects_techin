@@ -14,14 +14,30 @@ const personAccount = () => {
     return { firstName, lastName, incomes, expenses };
   };
   const addIncome = (income) => {
-      return income[0].push(income)
+    return income[0].push(income);
   };
   const addExpense = (expense) => {
-    return expenses[0].push(expense)
+    return expenses[0].push(expense);
   };
   const accountBalance = () => {
     return totalIncome() - totalExpense();
   };
 
-  return {}
+  return {
+    totalIncome,
+    totalExpense,
+    accountInfo,
+    addIncome,
+    addExpense,
+    accountBalance,
+  };
 };
+const {
+  totalIncome,
+  totalExpense,
+  accountInfo,
+  addIncome,
+  addExpense,
+  accountBalance,
+} = personAccount();
+console.log(totalIncome());
