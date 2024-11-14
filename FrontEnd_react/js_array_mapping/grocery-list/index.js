@@ -15,7 +15,7 @@ const cart = [];
 
 function logItemNames() {
   //TODO: use the .forEach() method to log out the name of each item
-  items.forEach(item=>console.log(item.name));
+  items.forEach((item) => console.log(item.name));
 }
 
 /**
@@ -24,7 +24,7 @@ function logItemNames() {
  */
 function findItemById(id) {
   // TODO: Use the .find() method to return the item who's id matches the passed in id
-  items.find(item=>item.id == id)
+  items.find((item) => item.id == id);
 }
 
 /**
@@ -33,7 +33,12 @@ function findItemById(id) {
 function capitalizeNames() {
   // TODO:  Use the .map() and possibly .slice() methods and return a new items array with the item names capitalized
   // DO NOT MUTATE THE ORIGINAL ARRAY IN YOU LOGIC
-  return items.map(item=>item.name.toUpperCase())
+  return items.map((item) => {
+    return {
+      ...item,
+      name: item.name.charAt(0).toUpperCase() + item.name.slice(1),
+    };
+  });
 }
 
 /**
@@ -42,7 +47,9 @@ function capitalizeNames() {
 
 function calculateTotalInventory() {
   // TODO Use the .reduce() method to return the total number of items in inventory
-  return items.reduce((acc)=>{return acc+1},0)
+  return items.reduce((acc) => {
+    return acc + 1;
+  }, 0);
 }
 
 /**
@@ -50,7 +57,9 @@ function calculateTotalInventory() {
  */
 function calculateAllInventoryPrice() {
   // TODO Use the .reduce() method to return the total price of all the items in inventory
-  return items.reduce((acc,val)=>{return acc+val.price}, 0)
+  return items.reduce((acc, val) => {
+    return acc + val.price;
+  }, 0);
 }
 
 /**
@@ -59,7 +68,7 @@ function calculateAllInventoryPrice() {
  */
 function getItemPriceByName(name) {
   // TODO: Use your knowledge of objects and arrays to get the price of the item passed in
-  return items.find(val=>val.name == name).price
+  return items.find((val) => val.name == name).price;
 }
 
 /**
@@ -68,12 +77,12 @@ function getItemPriceByName(name) {
  */
 function filterItemsByCategoryId(categoryId) {
   // TODO: use the .filter() method to filter out all items which don't belong the passed in category
-  return items.filter(val=>val.categoryId == categoryId)
+  return items.filter((val) => val.categoryId == categoryId);
 }
 
 function logCartItems() {
   // TODO: Loop through your cart and use the indexes to log the names of all items in your cart
-  items.forEach((val,index) => console.log(items[index].name))
+  items.forEach((val, index) => console.log(items[index].name));
 }
 
 /**
@@ -81,7 +90,9 @@ function logCartItems() {
  */
 function calculateTotalCartPrice() {
   // TODO: Loop through your cart and return the total price of all items in your cart
-return items.reduce((acc, item)=>{return acc+item.price}, 0)
+  return items.reduce((acc, item) => {
+    return acc + item.price;
+  }, 0);
 }
 
 // --------------------- DO NOT CHANGE THE CODE BELOW ------------------------ //
