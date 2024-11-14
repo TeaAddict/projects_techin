@@ -8,3 +8,12 @@ console.log(text_truncate('We are doing JS string exercises.',15,'!!'))
 "We are doing JS ..."
 "We are doing !!"
 */
+
+const text_truncate = (data, position, endChars = "...") => {
+    if (!position) return data
+
+    return data.length < position ? data : data.slice(0, position) + ` ${endChars}`
+}
+console.log(text_truncate('We are doing JS string exercises.'))
+console.log(text_truncate('We are doing JS string exercises.',19))
+console.log(text_truncate('We are doing JS string exercises.',15,'!!'))

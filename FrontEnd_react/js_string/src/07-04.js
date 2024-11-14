@@ -6,6 +6,6 @@ console.log(truncate_string("Robin Singh",4));
 */
 
 const truncate_string = (word, num) => {
-  return word.slice(num);
+  return word.slice(0, num);
 };
 console.log(truncate_string("Robin Singh", 4));
