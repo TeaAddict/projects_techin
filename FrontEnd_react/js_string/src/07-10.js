@@ -5,3 +5,14 @@ console.log(swapcase('AaBbc'));
 "aAbBC"
 */
 
+const swapcase = (data) => {
+  return data
+    .split("")
+    .map((letter) =>
+      letter == letter.toUpperCase()
+        ? letter.toLowerCase()
+        : letter.toUpperCase()
+    )
+    .join("");
+};
+console.log(swapcase("AaBbc"));

@@ -6,3 +6,7 @@ console.log(string_to_array("Robin Singh"));
 Click me to see the solution
 */
 
+const string_to_array = (data) => {
+  return data.split(" ");
+};
+console.log(string_to_array("Robin Singh"));

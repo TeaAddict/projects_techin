@@ -9,3 +9,12 @@ console.log(uncamelize('helloWorld','_'));
 "hello_world"
 */
 
+const uncamelize = (data, separator) => {
+  for (let letter of data) {
+    letter.toUpperCase()
+}
+};
+
+console.log(uncamelize("helloWorld"));
+console.log(uncamelize("helloWorld", "-"));
+console.log(uncamelize("helloWorld", "_"));

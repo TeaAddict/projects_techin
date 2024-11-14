@@ -9,4 +9,12 @@ console.log(camelize("JavaScriptExercises"));
 "JavaScriptExercises"
 */
 
-
+const camelize = (data) => {
+  return data
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join("");
+};
+console.log(camelize("JavaScript Exercises"));
+console.log(camelize("JavaScript exercises"));
+console.log(camelize("JavaScriptExercises"));
