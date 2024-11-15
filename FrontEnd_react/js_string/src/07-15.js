@@ -12,10 +12,19 @@ console.log(humanize_format(402));
 "402nd"
 */
 
-const humanize_format = (num) =>
-    {
-    return !num ? "" : String(num).charAt(String(num).length - 1) == "1" ? num + "st" : String(num).charAt(String(num).length - 1) == "2" ? num + "nd" : num + "th"
-}
+const humanize_format = (num) => {
+  const lastNum = String(num).charAt(String(num).length - 1);
+
+  return !num
+    ? ""
+    : lastNum == "1"
+    ? num + "st"
+    : lastNum == "2"
+    ? num + "nd"
+    : lastNum == "3"
+    ? num + "rd"
+    : num + "th";
+};
 console.log(humanize_format());
 console.log(humanize_format(1));
 console.log(humanize_format(8));

@@ -21,9 +21,9 @@ const count = (word, subWord) => {
   }
   return occurenceCount;
 };
-console.log(count("The quick brown fox jumps over the lazy dog he hehe", "he"));
-console.log(count("The quick brown fox jumps over the lazy dog", "the"));
-console.log(count("The quick brown fox jumps over the lazy dog", "fox", false));
+// console.log(count("The quick brown fox jumps over the lazy dog he hehe", "he"));
+// console.log(count("The quick brown fox jumps over the lazy dog", "the"));
+// console.log(count("The quick brown fox jumps over the lazy dog", "fox", false));
 
 const myGetMonth = (data) => {
   let months = [
@@ -46,3 +46,11 @@ const myGetMonth = (data) => {
   return months[mon];
 };
 // console.log(myGetMonth("2000-02-05"));
+
+const updateDate = () => {
+  const date1 = new Date();
+  console.log(date1);
+  date1.setHours(20);
+  console.log(date1);
+};
+updateDate();

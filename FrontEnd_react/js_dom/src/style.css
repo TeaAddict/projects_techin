@@ -1,0 +1,9 @@
+
+.box {
+    border: 2px red solid;
+    padding: 10px;
+}
+
+.highlight {
+    background-color: blue;
+}

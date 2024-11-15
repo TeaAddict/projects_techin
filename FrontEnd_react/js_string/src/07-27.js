@@ -11,8 +11,9 @@ Output :
 const ascii_to_hexa = (word) => {
   let res = "";
   for (let index in word) {
-    console.log(word[index].charCodeAt());
+    res += word[index].charCodeAt().toString(16);
   }
+  return res;
 };
 
 console.log(ascii_to_hexa("12"));

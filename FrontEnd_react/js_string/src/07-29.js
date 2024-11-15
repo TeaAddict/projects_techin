@@ -8,3 +8,7 @@ Output :
 "'aa' was found 2 times."
 */
 
+const search_word = () => {};
+
+console.log(search_word("The quick brown fox", "fox"));
+console.log(search_word("aa, bb, cc, dd, aa", "aa"));
