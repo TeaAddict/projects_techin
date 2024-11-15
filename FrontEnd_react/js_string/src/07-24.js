@@ -6,3 +6,8 @@ Output :
 "The quick brown fox"
 */
 
+const truncate = (word, num) => {
+  return word.split(" ").slice(0, num).join(" ");
+};
+
+console.log(truncate("The quick brown fox jumps over the lazy dog", 4));

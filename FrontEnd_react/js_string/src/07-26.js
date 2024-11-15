@@ -6,3 +6,16 @@ Output :
 "The quick brown fox jumps over lazy dog"
 */
 
+const remove_first_occurrence = (sentence, removeStr) => {
+  const removeLoc = sentence.search(removeStr);
+
+  return sentence[removeLoc - 1] == " "
+    ? sentence.replace(" " + removeStr, "")
+    : sentence[removeLoc + removeStr.lenth] == " "
+    ? sentence.replace(removeStr + " ", "")
+    : sentence.replace(removeStr, "");
+};
+
+console.log(
+  remove_first_occurrence("The quick brown fox jumps over the lazy dog", "the")
+);

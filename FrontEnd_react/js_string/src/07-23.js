@@ -10,4 +10,10 @@ Output :
 "w3resource"
 */
 
+const strip = (word) => {
+  return word.trim();
+};
 
+console.log(strip("w3resource "));
+console.log(strip(" w3resource"));
+console.log(strip(" w3resource "));

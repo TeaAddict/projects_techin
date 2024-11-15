@@ -8,3 +8,12 @@ Output :
 "313030"
 */
 
+const ascii_to_hexa = (word) => {
+  let res = "";
+  for (let index in word) {
+    console.log(word[index].charCodeAt());
+  }
+};
+
+console.log(ascii_to_hexa("12"));
+console.log(ascii_to_hexa("100"));

@@ -6,3 +6,9 @@ console.log(alphabetize_string('United States'));
 Output :
 "SUadeeinsttt"
 */
+
+const alphabetize_string = (word) => {
+  return word.split("").sort().join("").trim();
+};
+
+console.log(alphabetize_string("United States"));

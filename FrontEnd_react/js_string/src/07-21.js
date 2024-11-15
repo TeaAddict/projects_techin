@@ -8,3 +8,10 @@ Output :
 "Error in string or count."
 */
 
+const repeat_string = (letter, times) => {
+  if (typeof letter != "string" || !times) return "Error in string or count.";
+  return letter.repeat(times);
+};
+
+console.log(repeat_string("a", 4));
+console.log(repeat_string("a"));
