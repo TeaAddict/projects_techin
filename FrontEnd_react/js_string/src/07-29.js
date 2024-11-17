@@ -8,7 +8,14 @@ Output :
 "'aa' was found 2 times."
 */
 
-const search_word = () => {};
+const search_word = (words, searchWord) => {
+  let count = 0;
+  while (words.search(searchWord) !== -1) {
+    words = words.slice(words.search(searchWord) + searchWord.length);
+    count++;
+  }
+  return `'${searchWord}' was found ${count} times.`;
+};
 
 console.log(search_word("The quick brown fox", "fox"));
 console.log(search_word("aa, bb, cc, dd, aa", "aa"));

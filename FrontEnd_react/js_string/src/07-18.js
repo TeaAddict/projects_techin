@@ -53,4 +53,4 @@ const updateDate = () => {
   date1.setHours(20);
   console.log(date1);
 };
-updateDate();
+// updateDate();

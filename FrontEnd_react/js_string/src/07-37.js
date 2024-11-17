@@ -7,4 +7,8 @@ console.log(compare_strings('ABCD', 'Abce'));
 false
 */
 
-
+const compare_strings = (word1, word2) => {
+  return word1.toLowerCase() == word2.toLowerCase();
+};
+console.log(compare_strings("abcd", "AbcD"));
+console.log(compare_strings("ABCD", "Abce"));

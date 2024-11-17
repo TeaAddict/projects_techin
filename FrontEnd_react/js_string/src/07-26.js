@@ -11,7 +11,7 @@ const remove_first_occurrence = (sentence, removeStr) => {
 
   return sentence[removeLoc - 1] == " "
     ? sentence.replace(" " + removeStr, "")
-    : sentence[removeLoc + removeStr.lenth] == " "
+    : sentence[removeLoc + removeStr.length] == " "
     ? sentence.replace(removeStr + " ", "")
     : sentence.replace(removeStr, "");
 };

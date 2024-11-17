@@ -8,17 +8,18 @@ Output :
 "100"
 */
 
-const hex_to_ascii = (hex) => {
-  console.log("Hex:", hex, [hex]);
-  if (hex.length <= 2) return [hex];
-  return [hex.slice(0, 2), ...hex_to_ascii(hex.slice(2))];
+const hex_to_ascii = (data) => {
+  let copy = data;
+  let res = [];
+  let isRunning = true;
+  while (isRunning == true) {
+    if (copy.length <= 2) isRunning = false;
+    const nn = copy.slice(0, 2).charCodeAt(1);
+    console.log(nn);
+    res = [...res, nn];
+    copy = copy.slice(2);
+  }
+  return res;
 };
-
-// console.log(hex_to_ascii("3132"));
-// console.log(hex_to_ascii("313030"));
-
-// const test = (data) => {
-//   if (data.length <= 1) return data;
-//   return test(data.slice(1));
-// };
-// console.log(test("32134213"));
+console.log(hex_to_ascii("3132"));
+console.log(hex_to_ascii("313030"));

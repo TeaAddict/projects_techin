@@ -6,3 +6,10 @@ true
 console.log(string_endsWith('JS PHP PYTHON',''));
 false
 */
+
+const string_endsWith = (words, endWord) => {
+  const wordsArr = words.split(" ");
+  return wordsArr[wordsArr.length - 1] == endWord;
+};
+console.log(string_endsWith("JS PHP PYTHON", "PYTHON"));
+console.log(string_endsWith("JS PHP PYTHON", ""));

@@ -9,10 +9,6 @@ Output :
 */
 
 const subStrAfterChars = (word, char, direction) => {
-  //   for (let letter in word) {
-  //     console.log(letter, word[letter]);
-  //   }
-
   return direction == "b"
     ? word.slice(word.search(char) + 1)
     : direction == "a"
