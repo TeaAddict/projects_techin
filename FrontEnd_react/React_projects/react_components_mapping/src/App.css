@@ -1,0 +1,26 @@
+img {
+  height: 10rem;
+  width: 10rem;
+}
+
+.parent-container {
+  background-color: #2a2d33;
+  padding: 1rem;
+  color: white;
+}
+
+.section {
+  background: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.section__ul {
+  display: flex;
+  gap: 5rem;
+  list-style-type: none;
+}

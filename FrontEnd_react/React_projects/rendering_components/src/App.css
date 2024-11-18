@@ -1,0 +1,25 @@
+.header {
+  background-color: #61dbfb;
+  padding-block: 1rem;
+  padding-inline: 5rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding-block: 1rem;
+  padding-inline: 5rem;
+}
+
+.main__ul {
+  padding-left: 1rem;
+  list-style-type: none;
+}
+
+.footer {
+  background-color: #66ccff;
+  display: flex;
+  justify-content: center;
+  padding-block: 1rem;
+  padding-inline: 5rem;
+}
