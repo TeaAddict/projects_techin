@@ -1,0 +1,43 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.notification {
+  width: 2rem;
+  height: 2rem;
+}
+
+.notification--success {
+  background-color: green;
+}
+.notification--error {
+  background-color: red;
+}
+.notification--warning {
+  background-color: yellow;
+}
+
+.modal {
+  width: 5rem;
+  height: 2rem;
+  background: blue;
+}
+
+.modal--display {
+  display: block;
+}
+.modal--hidden {
+  display: none;
+}
+
+.tabbedContent {
+  display: flex;
+}
