@@ -4,66 +4,65 @@
 
 @layer base {
   .btn--base {
-    @apply rounded-md shadow-md
-        desktop:text-[32px] font-[700];
+    @apply rounded-md text-[32px] font-[700] border-solid border-b-4;
   }
 
   .btn {
-    @apply text-theme-1-text-dark-blue p-1 hover:bg-theme-1-key-hover desktop:text-[32px] btn--base aspect-square;
+    @apply btn--base text-theme-1-text-dark-blue p-1 aspect-square sm:aspect-auto;
   }
 
   .btn--large {
-    @apply text-theme-1-text-dark-blue py-3 hover:bg-theme-1-key-hover desktop:text-[32px] btn--base;
+    @apply btn--base text-[20px] text-theme-1-text-dark-blue py-5 sm:py-2 desktop:text-[32px];
   }
 
   /* Theme 1 */
   .theme-1-btn--dark-large {
-    @apply btn--large bg-theme-1-key-dark-blue text-theme-1-text-white hover:bg-theme-1-key-hover hover:text-theme-1-text-dark-blue;
+    @apply btn--large bg-theme-1-key-dark-blue text-theme-1-text-white hover:bg-theme-1-key-dark-blue--active hover:text-theme-1-text-white border-theme-1-key-dark-blue-shadow;
   }
 
   .theme-1-btn--highlighted-large {
-    @apply btn--large bg-theme-1-key-red text-theme-1-text-white hover:bg-theme-1-key-hover hover:text-theme-1-text-dark-blue;
+    @apply btn--large bg-theme-1-key-red text-theme-1-text-white hover:bg-theme-1-key-red--active hover:text-theme-1-text-white border-theme-1-key-red-shadow;
   }
 
   .theme-1-btn--normal {
-    @apply btn bg-theme-1-key-light-orange;
+    @apply btn bg-theme-1-key-light-orange hover:bg-theme-1-key--active border-theme-1-key-light-orange-shadow;
   }
 
   .theme-1-btn--dark {
-    @apply btn bg-theme-1-key-dark-blue text-theme-1-text-white;
+    @apply btn text-[20px] bg-theme-1-key-dark-blue hover:bg-theme-1-key-dark-blue--active text-theme-1-text-white border-theme-1-key-dark-blue-shadow;
   }
 
   /* Theme 2 */
   .theme-2-btn--dark-large {
-    @apply btn--large bg-theme-2-key-cyan text-theme-1-text-white hover:bg-theme-1-key-hover hover:text-theme-1-text-dark-blue;
+    @apply btn--large bg-theme-2-key-cyan text-theme-1-text-white hover:bg-theme-2-key-cyan--active hover:text-theme-1-text-white border-theme-2-key-cyan-shadow;
   }
 
   .theme-2-btn--highlighted-large {
-    @apply btn--large bg-theme-2-key-orange text-theme-1-text-white hover:bg-theme-1-key-hover hover:text-theme-1-text-dark-blue;
+    @apply btn--large bg-theme-2-key-orange text-theme-1-text-white hover:bg-theme-2-key-orange--active hover:text-theme-1-text-white border-theme-2-key-orange-shadow;
   }
 
   .theme-2-btn--normal {
-    @apply btn bg-theme-2-key-light-yellow;
+    @apply btn bg-theme-2-key-light-yellow hover:bg-theme-2-key-light-yellow--active border-theme-2-key-light-yellow-shadow;
   }
 
   .theme-2-btn--dark {
-    @apply btn bg-theme-2-key-cyan text-theme-1-text-white;
+    @apply btn text-[20px] bg-theme-2-key-cyan hover:bg-theme-2-key-cyan--active text-theme-1-text-white border-theme-2-key-cyan-shadow;
   }
 
   /* Theme 3 */
   .theme-3-btn--dark-large {
-    @apply btn--large bg-theme-3-key-violet text-theme-1-text-white hover:bg-theme-1-key-hover hover:text-theme-1-text-dark-blue;
+    @apply btn--large bg-theme-3-key-violet text-theme-1-text-white hover:bg-theme-3-key-violet--active hover:text-theme-1-text-white border-theme-3-key-magenta;
   }
 
   .theme-3-btn--highlighted-large {
-    @apply btn--large bg-theme-3-key-cyan text-theme-3-text-dark-blue hover:bg-theme-1-key-hover hover:text-theme-1-text-dark-blue;
+    @apply btn--large bg-theme-3-key-cyan text-theme-3-text-dark-blue hover:bg-theme-3-key-cyan--active hover:text-theme-1-text-dark-blue border-theme-3-key-cyan-shadow;
   }
 
   .theme-3-btn--normal {
-    @apply btn bg-theme-3-key-dark-violet text-theme-3-text-yellow;
+    @apply btn bg-theme-3-key-dark-violet hover:bg-theme-3-key-violet--active text-theme-3-text-yellow border-theme-3-key-magenta;
   }
 
   .theme-3-btn--dark {
-    @apply btn bg-theme-3-key-violet text-white;
+    @apply btn text-[20px] bg-theme-3-key-violet hover:bg-theme-3-key-violet--active text-white border-theme-3-key-magenta;
   }
 }

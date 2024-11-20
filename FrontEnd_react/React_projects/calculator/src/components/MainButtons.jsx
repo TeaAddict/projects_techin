@@ -1,4 +1,6 @@
-const MainButtons = ({ theme }) => {
+import { useState } from "react";
+
+const MainButtons = ({ theme, setScreen }) => {
   const buttons1 = [
     "7",
     "8",
@@ -17,6 +19,8 @@ const MainButtons = ({ theme }) => {
     "/",
     "x",
   ];
+
+  const operationSymbols = "./x+-";
 
   const bgTheme = {
     1: "bg-theme-1-bg-toggle rounded-lg p-4",
@@ -45,6 +49,59 @@ const MainButtons = ({ theme }) => {
     },
   };
 
+  const [values, setValues] = useState(["", ""]);
+  const [operation, setOperation] = useState("");
+  const [valueSide, setValueSide] = useState("left");
+
+  const operations = {
+    "+": () => Number(values[0]) + Number(values[1]),
+    "-": () => Number(values[0]) - Number(values[1]),
+    x: () => Number(values[0]) * Number(values[1]),
+    "/": () => Number(values[0]) / Number(values[1]),
+    DEL: () => {},
+    RESET: () => {},
+  };
+
+  const onClick = (value) => {
+    let valueArr = values;
+
+    if (value == "=") {
+      setScreen();
+      // RES OPERATION HERE
+      return;
+    }
+
+    if (operationSymbols.includes(value)) {
+      if (valueSide == "right") {
+        // RES OPERATION HERE
+        console.log("Second operator");
+      } else {
+        setOperation(value);
+        setValueSide("right");
+        setScreen(values[0] + value + values[1]);
+      }
+      return;
+    } else if (valueSide == "right") {
+      if (!values[1]) {
+        valueArr = [values[0], value];
+        setValues(valueArr);
+      } else {
+        valueArr = [values[0], values[1] + value];
+        setValues(valueArr);
+      }
+    } else if (valueSide == "left") {
+      if (!values[0]) {
+        valueArr = [value, values[1]];
+        setValues(valueArr);
+      } else {
+        valueArr = [values[0] + value, values[1]];
+        setValues(valueArr);
+      }
+    }
+    const screenRes = valueArr[0] + operation + valueArr[1];
+    setScreen(screenRes);
+  };
+
   return (
     <div className={bgTheme[theme]}>
       <div className="flex flex-col gap-3">
@@ -55,6 +112,7 @@ const MainButtons = ({ theme }) => {
               className={
                 button == "DEL" ? smallBtn[theme].dark : smallBtn[theme].normal
               }
+              onClick={() => onClick(button)}
             >
               {button}
             </button>
@@ -62,7 +120,12 @@ const MainButtons = ({ theme }) => {
         </div>
         <div className="grid grid-cols-2 gap-3">
           <button className={largeBtn[theme].normal}>RESET</button>
-          <button className={largeBtn[theme].highlighted}>=</button>
+          <button
+            className={largeBtn[theme].highlighted}
+            onClick={() => onClick("=")}
+          >
+            =
+          </button>
         </div>
       </div>
     </div>

@@ -6,18 +6,21 @@ import Screen from "./components/Screen";
 
 function App() {
   const [theme, setTheme] = useState(1);
+  const [screen, setScreen] = useState(0);
 
   const bgTheme = {
-    1: "flex flex-col gap-8 bg-theme-1-bg-main rounded-lg p-8",
-    2: "flex flex-col gap-8 bg-theme-2-bg-main rounded-lg p-8",
-    3: "flex flex-col gap-8 bg-theme-3-bg-main rounded-lg p-8",
+    1: "bg-theme-1-bg-main p-8 flex justify-center h-[100vh]",
+    2: "bg-theme-2-bg-main p-8 flex justify-center h-[100vh]",
+    3: "bg-theme-3-bg-main p-8 flex justify-center h-[100vh]",
   };
 
   return (
     <div className={bgTheme[theme]}>
-      <Header theme={theme} setTheme={setTheme} />
-      <Screen result={399981} theme={theme} />
-      <MainButtons theme={theme} />
+      <div className="flex flex-col gap-6 w-full mobile:max-w-[25rem]">
+        <Header theme={theme} setTheme={setTheme} />
+        <Screen screen={screen} theme={theme} />
+        <MainButtons theme={theme} setScreen={setScreen} />
+      </div>
     </div>
   );
 }
