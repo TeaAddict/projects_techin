@@ -9,10 +9,10 @@ import Modal from "./Modal";
 import TabbedContent from "./TabbedContent";
 
 const Main = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const [userRole, setUserRole] = useState("admin");
-  const [tasks, setTasks] = useState(["😊", "👌", "👍", "🙌"]);
+  const [userRole, setUserRole] = useState("user");
+  const [tasks, setTasks] = useState(["😊", "👌", "👍", "🙌", "🙌", "🙌"]);
   const [isOpen, setIsOpen] = useState(false);
 
   const featureFlags = {
@@ -47,10 +47,10 @@ const Main = () => {
       )}
 
       {/* 6. */}
-      <Notification type={"success"} />
+      <Notification type={"error"} />
 
       {/* 7. */}
-      <SchoolForm userType={"student"} />
+      <SchoolForm userType={"teacher"} />
 
       {/* 8. */}
       <Modal isOpen={isOpen} />

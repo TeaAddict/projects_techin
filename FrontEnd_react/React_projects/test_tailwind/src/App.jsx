@@ -1,10 +1,11 @@
 import "./App.css";
+import EmailValidationForm from "./components/EmailValidationForm";
 
 function App() {
   return (
     <>
       <h1>TEST</h1>
-      <p className="text-shadow">Testing utility</p>
+      <EmailValidationForm />
     </>
   );
 }

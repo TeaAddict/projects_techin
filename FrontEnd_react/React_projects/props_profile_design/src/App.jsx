@@ -16,17 +16,15 @@ function App() {
   };
 
   return (
-    <>
-      <div>
-        <Profile
-          avatar={data.avatar}
-          username={data.username}
-          tag={data.tag}
-          location={data.location}
-        />
-        <Stats stats={data.stats} />
-      </div>
-    </>
+    <div>
+      <Profile
+        avatar={data.avatar}
+        username={data.username}
+        tag={data.tag}
+        location={data.location}
+      />
+      <Stats stats={data.stats} />
+    </div>
   );
 }
 

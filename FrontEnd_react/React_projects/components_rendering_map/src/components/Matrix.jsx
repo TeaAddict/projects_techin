@@ -3,7 +3,6 @@ const Matrix = ({ num }) => {
 
   const isPrime = (n) => {
     if (n <= 1) return false;
-
     // Check divisibility from 2 to n-1
     for (let i = 2; i < n; i++) if (n % i == 0) return false;
 
@@ -12,7 +11,7 @@ const Matrix = ({ num }) => {
 
   return (
     <div className="flex flex-wrap gap-[1px]">
-      {elements.map((val, index) => (
+      {elements.map((_, index) => (
         <div
           key={index}
           className={`w-[4rem] h-[4rem] flex items-center justify-center text-white ${

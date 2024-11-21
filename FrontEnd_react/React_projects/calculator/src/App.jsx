@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className={bgTheme[theme]}>
-      <div className="flex flex-col gap-6 w-full mobile:max-w-[25rem]">
+      <div className={`flex flex-col gap-6 w-full mobile:max-w-[25rem]`}>
         <Header theme={theme} setTheme={setTheme} />
         <Screen screen={screen} theme={theme} />
         <MainButtons theme={theme} setScreen={setScreen} />
