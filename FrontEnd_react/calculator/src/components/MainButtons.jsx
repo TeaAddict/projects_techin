@@ -62,64 +62,45 @@ const MainButtons = ({ theme, setScreen }) => {
 
   const onClick = (value) => {
     let valueArr = values;
+    let operator = operation;
 
     if (operationSymbols.includes(value)) {
-      // if (valueSide == "right") {
-      //   const res = operations[operation]();
-      //   setOperation(value);
-      //   setValues([res, ""]);
-      //   setScreen(`${res}${value}`);
-      // } else {
+      operator = value;
       setOperation(value);
       setValueSide("right");
-      setScreen(values[0] + value + values[1]);
-      // }
-      return;
-    } else if (valueSide == "right") {
-      if (value == "DEL") {
-        let newVal = values;
-        if (values[1] == 0 || !values[1]) {
-          return;
-        } else if (String(values[1]).length == 1) {
-          newVal = [newVal[0], 0];
-        } else {
-          newVal = [values[0], values[1].slice(0, -1)];
-        }
-        setValues(newVal);
-        setScreen(newVal[0] + operation + newVal[1]);
-        return;
-      }
-      if (!values[1] || values[1] == 0) {
-        valueArr = [values[0], value];
-        setValues(valueArr);
-      } else {
-        valueArr = [values[0], values[1] + value];
-        setValues(valueArr);
-      }
     } else if (valueSide == "left") {
       if (value == "DEL") {
-        let newVal = values;
-
         if (values[0] == 0 || !values[0]) {
           return;
         } else if (String(values[0]).length == 1) {
-          newVal = [0, ""];
+          valueArr = [0, ""];
         } else {
-          newVal = [values[0].slice(0, -1), ""];
+          valueArr = [String(values[0]).slice(0, -1), ""];
         }
-        setValues(newVal);
-        setScreen(newVal[0] + operation + newVal[1]);
-        return;
-      }
-      if (!values[0] || values[0] == 0) {
+      } else if (value == "." && !value[0]) {
+        valueArr = ["0.", values[1]];
+      } else if (!values[0] || values[0] == 0) {
         valueArr = [value, values[1]];
-        setValues(valueArr);
       } else {
         valueArr = [values[0] + value, values[1]];
-        setValues(valueArr);
+      }
+    } else if (valueSide == "right") {
+      if (value == "DEL") {
+        if (values[1] == 0 || !values[1]) {
+          return;
+        } else if (String(values[1]).length == 1) {
+          valueArr = [valueArr[0], 0];
+        } else {
+          valueArr = [values[0], String(values[1]).slice(0, -1)];
+        }
+      } else if (!values[1] || values[1] == 0) {
+        valueArr = [values[0], value];
+      } else {
+        valueArr = [values[0], values[1] + value];
       }
     }
-    const screenRes = valueArr[0] + operation + valueArr[1];
+    setValues(valueArr);
+    const screenRes = valueArr[0] + operator + valueArr[1];
     setScreen(screenRes);
   };
 
@@ -131,6 +112,7 @@ const MainButtons = ({ theme, setScreen }) => {
   };
 
   const onResult = () => {
+    if (!operation || !values[1]) return;
     const res = operations[operation]();
     setOperation("");
     setValueSide("left");
