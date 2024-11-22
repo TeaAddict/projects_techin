@@ -1,6 +1,33 @@
 import { useState } from "react";
 
 const MainButtons = ({ theme, setScreen }) => {
+  // const bgTheme = {
+  //   1: "bg-theme-1-bg-toggle rounded-lg p-4",
+  //   2: "bg-theme-2-bg-toggle rounded-lg p-4",
+  //   3: "bg-theme-3-bg-toggle rounded-lg p-4",
+  // };
+
+  // const smallBtn = {
+  //   1: { normal: "theme-1-btn--normal", dark: "theme-1-btn--dark" },
+  //   2: { normal: "theme-2-btn--normal", dark: "theme-2-btn--dark" },
+  //   3: { normal: "theme-3-btn--normal", dark: "theme-3-btn--dark" },
+  // };
+
+  // const largeBtn = {
+  //   1: {
+  //     normal: "theme-1-btn--dark-large",
+  //     highlighted: "theme-1-btn--highlighted-large",
+  //   },
+  //   2: {
+  //     normal: "theme-2-btn--dark-large",
+  //     highlighted: "theme-2-btn--highlighted-large",
+  //   },
+  //   3: {
+  //     normal: "theme-3-btn--dark-large",
+  //     highlighted: "theme-3-btn--highlighted-large",
+  //   },
+  // };
+
   const buttons1 = [
     "7",
     "8",
@@ -21,33 +48,6 @@ const MainButtons = ({ theme, setScreen }) => {
   ];
 
   const operationSymbols = "/x+-";
-
-  const bgTheme = {
-    1: "bg-theme-1-bg-toggle rounded-lg p-4",
-    2: "bg-theme-2-bg-toggle rounded-lg p-4",
-    3: "bg-theme-3-bg-toggle rounded-lg p-4",
-  };
-
-  const smallBtn = {
-    1: { normal: "theme-1-btn--normal", dark: "theme-1-btn--dark" },
-    2: { normal: "theme-2-btn--normal", dark: "theme-2-btn--dark" },
-    3: { normal: "theme-3-btn--normal", dark: "theme-3-btn--dark" },
-  };
-
-  const largeBtn = {
-    1: {
-      normal: "theme-1-btn--dark-large",
-      highlighted: "theme-1-btn--highlighted-large",
-    },
-    2: {
-      normal: "theme-2-btn--dark-large",
-      highlighted: "theme-2-btn--highlighted-large",
-    },
-    3: {
-      normal: "theme-3-btn--dark-large",
-      highlighted: "theme-3-btn--highlighted-large",
-    },
-  };
 
   const [values, setValues] = useState(["", ""]);
   const [operation, setOperation] = useState("");
@@ -121,14 +121,16 @@ const MainButtons = ({ theme, setScreen }) => {
   };
 
   return (
-    <div className={bgTheme[theme]}>
+    <div className={`bg-theme-${theme}-bg-toggle rounded-lg p-4`}>
       <div className="flex flex-col gap-3">
         <div className="grid grid-cols-4 gap-3">
           {buttons1.map((button, index) => (
             <button
               key={button + index}
               className={
-                button == "DEL" ? smallBtn[theme].dark : smallBtn[theme].normal
+                button == "DEL"
+                  ? `theme-${theme}-btn--dark`
+                  : `theme-${theme}-btn--normal`
               }
               onClick={() => onClick(button)}
             >
@@ -137,10 +139,16 @@ const MainButtons = ({ theme, setScreen }) => {
           ))}
         </div>
         <div className="grid grid-cols-2 gap-3">
-          <button className={largeBtn[theme].normal} onClick={onReset}>
+          <button
+            className={`theme-${theme}-btn--dark-large`}
+            onClick={onReset}
+          >
             RESET
           </button>
-          <button className={largeBtn[theme].highlighted} onClick={onResult}>
+          <button
+            className={`theme-${theme}-btn--highlighted-large`}
+            onClick={onResult}
+          >
             =
           </button>
         </div>

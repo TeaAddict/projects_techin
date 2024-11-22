@@ -1,7 +1,39 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  safelist: [],
+  safelist: [
+    "bg-theme-1-bg-toggle",
+    "bg-theme-2-bg-toggle",
+    "bg-theme-3-bg-toggle",
+
+    "bg-theme-1-bg-screen",
+    "bg-theme-2-bg-screen",
+    "bg-theme-3-bg-screen",
+
+    "bg-theme-1-bg-main",
+    "bg-theme-2-bg-main",
+    "bg-theme-3-bg-main",
+
+    "text-theme-1-text-white",
+    "text-theme-2-text-dark-yellow",
+    "text-theme-3-text-yellow",
+
+    "theme-1-btn--normal",
+    "theme-2-btn--normal",
+    "theme-3-btn--normal",
+
+    "theme-1-btn--dark",
+    "theme-2-btn--dark",
+    "theme-3-btn--dark",
+
+    "theme-1-btn--dark-large",
+    "theme-2-btn--dark-large",
+    "theme-3-btn--dark-large",
+
+    "theme-1-btn--highlighted-large",
+    "theme-2-btn--highlighted-large",
+    "theme-3-btn--highlighted-large",
+  ],
   theme: {
     extend: {
       screens: {
