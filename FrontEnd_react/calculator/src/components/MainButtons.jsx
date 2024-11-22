@@ -120,7 +120,6 @@ const MainButtons = ({ theme, setScreen }) => {
     setScreen(res);
   };
 
-  console.log(`Values: ${values}, Operation: ${operation}, Side: ${valueSide}`);
   return (
     <div className={bgTheme[theme]}>
       <div className="flex flex-col gap-3">
