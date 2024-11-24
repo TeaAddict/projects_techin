@@ -30,9 +30,11 @@ const Sorter = ({ items, setItems }) => {
   };
 
   useEffect(() => {
-    console.log("Re-sorting items due to change in items or sortBy");
-    setItems((prevItems) => sortItems(sortBy, prevItems));
-  }, [sortBy, setItems]); // Trigger effect when items or sortBy changes
+    const sortedItems = sortItems(sortBy, items);
+    if (JSON.stringify(sortedItems) !== JSON.stringify(items)) {
+      setItems(sortedItems);
+    }
+  }, [items, sortBy, setItems]);
 
   return (
     <select className="uppercase" onChange={handleSort} value={sortBy}>
