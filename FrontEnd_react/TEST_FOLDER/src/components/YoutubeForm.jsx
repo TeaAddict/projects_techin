@@ -1,36 +1,56 @@
 import { useForm } from "react-hook-form";
-import { DevTool } from "@hookform/devtools";
 
 const YoutubeForm = () => {
-  const { register } = useForm({
+  const { register, handleSubmit, reset } = useForm({
+    mode: "onBlur",
+    reValidateMode: "onChange",
     defaultValues: {
       username: "",
       password: "",
       channel: "",
       email: "",
       favColor: "",
+      hobbies: "",
     },
   });
+
+  const handleFormSubmit = (data) => {
+    console.log(data);
+    reset();
+  };
+
+  const handleReset = () => {
+    console.log("test");
+
+    reset();
+  };
+
   return (
     <div>
-      <form className="flex flex-col items-center gap-4">
+      <form
+        onSubmit={handleSubmit(handleFormSubmit)}
+        noValidate
+        className="flex flex-col items-center gap-4"
+      >
         <h1 className="text-xl">Wow what a form</h1>
         <div className="flex flex-col gap-3">
           <div className="grid grid-cols-[1fr_2fr] justify-between items-center gap-4">
-            <label htmlFor="username">Username</label>
+            <label>Username</label>
             <input
               {...register("username", { required: "Username is required" })}
               type="text"
               id="username"
+              placeholder="Enter user name"
               className="text-black"
             />
           </div>
           <div className="grid grid-cols-[1fr_2fr] justify-between items-center gap-4">
-            <label htmlFor="username">Password</label>
+            <label>Password</label>
             <input
               {...register("password", { required: "Username is required" })}
               type="text"
               id="password"
+              placeholder="Enter password"
               className="text-black"
             />
           </div>
@@ -48,11 +68,12 @@ const YoutubeForm = () => {
             </select>
           </div>
           <div className="grid grid-cols-[1fr_2fr] justify-between items-center gap-4">
-            <label htmlFor="username">email</label>
+            <label>email</label>
             <input
               {...register("email", { required: "email is required" })}
               type="text"
               id="email"
+              placeholder="Enter email"
               className="text-black"
             />
           </div>
@@ -126,9 +147,13 @@ const YoutubeForm = () => {
               </label>
             </div>
           </div>
+
           <div className="flex justify-center">
             <button type="submit" className="border-2 border-white px-2 py-1">
               Submit
+            </button>
+            <button type="button" onClick={() => handleReset()}>
+              RESET
             </button>
           </div>
         </div>
