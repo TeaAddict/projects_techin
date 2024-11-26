@@ -1,7 +1,6 @@
 import User from "./User";
 
 const UserList = ({ users }) => {
-  console.log("USER LIST:", users);
   return (
     <div>
       {users.map((user) => {

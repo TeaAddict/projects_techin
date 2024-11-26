@@ -22,7 +22,7 @@ const Form = ({ setUpdate }) => {
       setUpdate((update) => update + 1);
       const response = await postdata({ ...data, likes: 0 });
       console.log(response);
-      if (!response.ok) throw new Error("Problem with request");
+      if (!response) throw new Error("Problem with request");
     } catch (error) {
       alert(error.message);
       setError(error.message);

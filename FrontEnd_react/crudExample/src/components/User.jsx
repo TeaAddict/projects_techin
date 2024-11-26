@@ -1,6 +1,5 @@
 const User = ({ user }) => {
-  console.log("EEE", user);
-  return <div>{user.username}</div>;
+  return <div>{user.userName}</div>;
 };
 
 export default User;
