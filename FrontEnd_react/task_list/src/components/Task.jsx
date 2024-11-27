@@ -11,7 +11,11 @@ const Task = ({ data, setIsUpdate }) => {
   const [isEditing, setIsEditing] = useState(false);
   const { id, name, priority, status, completed } = data;
 
-  const priorities = { high: "High", medium: "Medium", low: "Low" };
+  const priorities = {
+    high: { name: "High", color: "#fff" },
+    medium: { name: "Medium", color: "#fff" },
+    low: { name: "Low", color: "#fff" },
+  };
   const statuses = { toDo: "To Do", inProgress: "In Progress", done: "Done" };
 
   const handleEdit = async () => {
@@ -29,11 +33,11 @@ const Task = ({ data, setIsUpdate }) => {
 
   return (
     <div>
-      <div className="grid grid-cols-5 justify-between items-center gap-3 p-4 rounded-3xl bg-white">
-        <div>
+      <div className="flex justify-between items-center gap-3 p-5 rounded-3xl bg-white">
+        <div className="flex flex-col w-[10.6rem]">
           <div>
             <p className="text-[#bdc4cc]">Task</p>
-            <p className="text-[#828b99] font-semibold">
+            <p className="text-[#0a1629] font-semibold">
               {capitalizeFirstLetter(name)}
             </p>
           </div>
@@ -41,7 +45,11 @@ const Task = ({ data, setIsUpdate }) => {
         <div className="flex flex-col items-center">
           <div>
             <p className="text-[#bdc4cc]">Priority</p>
-            {priority && <p>{priorities[priority]}</p>}
+            {priority && (
+              <p className={priorities[priority].color}>
+                {priorities[priority].value}
+              </p>
+            )}
           </div>
         </div>
         <div className="flex justify-center">

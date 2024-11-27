@@ -23,9 +23,11 @@ function App() {
   }, [isUpdate]);
 
   return (
-    <div className="h-[100vh] flex flex-col gap-6 p-8 bg-[#f0f2f5]">
-      <Header setIsUpdate={setIsUpdate} />
-      <TaskList data={tasks} setIsUpdate={setIsUpdate} />
+    <div className="h-[100vh] bg-[#f0f2f5] flex justify-center items-center">
+      <div className="flex flex-col gap-6">
+        <Header setIsUpdate={setIsUpdate} />
+        <TaskList data={tasks} setIsUpdate={setIsUpdate} />
+      </div>
     </div>
   );
 }

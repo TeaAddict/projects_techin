@@ -6,6 +6,8 @@ const Form = ({ setOpen, defaultData, setIsUpdate }) => {
   const {
     register,
     handleSubmit,
+    setValue,
+    watch,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -17,20 +19,21 @@ const Form = ({ setOpen, defaultData, setIsUpdate }) => {
   });
 
   const handleFormSubmit = async (data) => {
-    try {
-      if (defaultData) {
-        await updateData(defaultData.id, data);
-      } else {
-        await postData(data);
-      }
-      setIsUpdate((isUpdate) => isUpdate + 1);
-      setOpen(false);
-    } catch (error) {
-      console.log(error.message);
-    }
+    console.log(data);
+    // try {
+    //   if (defaultData) {
+    //     await updateData(defaultData.id, data);
+    //   } else {
+    //     await postData(data);
+    //   }
+    //   setIsUpdate((isUpdate) => isUpdate + 1);
+    //   setOpen(false);
+    // } catch (error) {
+    //   console.log(error.message);
+    // }
   };
 
-  console.log(defaultData);
+  const priority = watch("priority");
 
   return (
     <div className="flex flex-col gap-5">
@@ -39,13 +42,9 @@ const Form = ({ setOpen, defaultData, setIsUpdate }) => {
         onSubmit={handleSubmit(handleFormSubmit)}
         className="flex flex-col gap-2"
       >
-        <label
-          htmlFor="name"
-          className="grid grid-cols-[1fr_2fr] gap-2 text-start items-center"
-        >
+        <label className="grid grid-cols-[1fr_2fr] gap-2 text-start items-center">
           Task name
           <input
-            id="name"
             {...register("name", { required: "Need task name" })}
             placeholder="Enter task name"
           />
@@ -55,15 +54,9 @@ const Form = ({ setOpen, defaultData, setIsUpdate }) => {
             </p>
           )}
         </label>
-        <label
-          htmlFor="priority"
-          className="grid grid-cols-[1fr_2fr] gap-2 text-start items-center"
-        >
+        {/* <label className="grid grid-cols-[1fr_2fr] gap-2 text-start items-center">
           Priority
-          <select
-            id="priority"
-            {...register("priority", { required: "Need priority" })}
-          >
+          <select {...register("priority", { required: "Need priority" })}>
             <option value="">Select priority</option>
             <option value="high">High</option>
             <option value="medium">Medium</option>
@@ -74,16 +67,43 @@ const Form = ({ setOpen, defaultData, setIsUpdate }) => {
               {errors.priority.message}
             </p>
           )}
-        </label>
-        <label
-          htmlFor="status"
-          className="grid grid-cols-[1fr_2fr] gap-2 text-start items-center"
-        >
-          Status
-          <select
-            id="status"
-            {...register("status", { required: "Need status" })}
+        </label> */}
+        <div className="flex gap-4">
+          <button
+            className={`${
+              priority == "high"
+                ? "bg-red-500 text-white"
+                : "bg-white text-red-500"
+            } border-2 border-red-500 font-[500] w-[5.6rem] rounded-xl`}
+            onClick={() => setValue("priority", "high")}
           >
+            High
+          </button>
+          <button
+            className={`${
+              priority == "high"
+                ? "bg-red-500 text-white"
+                : "bg-white text-red-500"
+            } border-2 border-red-500 font-[500] w-[5.6rem] rounded-xl`}
+            onClick={() => setValue("priority", "medium")}
+          >
+            Medium
+          </button>
+          <button
+            className={`${
+              priority == "high"
+                ? "bg-red-500 text-white"
+                : "bg-white text-red-500"
+            } border-2 border-red-500 font-[500] w-[5.6rem] rounded-xl`}
+            onClick={() => setValue("priority", "low")}
+          >
+            Low
+          </button>
+        </div>
+
+        <label className="grid grid-cols-[1fr_2fr] gap-2 text-start items-center">
+          Status
+          <select {...register("status", { required: "Need status" })}>
             <option value="">Select status</option>
             <option value="toDo">To Do</option>
             <option value="inProgress">In Progress</option>
@@ -95,14 +115,10 @@ const Form = ({ setOpen, defaultData, setIsUpdate }) => {
             </p>
           )}
         </label>
-        <label
-          htmlFor="completed"
-          className="grid grid-cols-[1fr_2fr] gap-2 text-start items-center"
-        >
+        {/* <label className="grid grid-cols-[1fr_2fr] gap-2 text-start items-center">
           Completed
           <input
             type="number"
-            id="completed"
             {...register("completed", {
               required: "Need percentage",
               pattern: {
@@ -117,7 +133,8 @@ const Form = ({ setOpen, defaultData, setIsUpdate }) => {
               {errors.completed.message}
             </p>
           )}
-        </label>
+        </label> */}
+        <input {...register("completed")} defaultValue={0} className="hidden" />
         <div className="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
           <input
             type="submit"
