@@ -1,0 +1,39 @@
+{
+  "tasks": [
+    {
+      "id": "a280",
+      "name": "Go to gym",
+      "priority": "medium",
+      "status": "toDo",
+      "completed": 20
+    },
+    {
+      "id": "dc1a",
+      "name": "test",
+      "priority": "medium",
+      "status": "done",
+      "completed": "1"
+    },
+    {
+      "id": "36a3",
+      "name": "asdez",
+      "priority": "high",
+      "status": "inProgress",
+      "completed": "2"
+    },
+    {
+      "id": "eaf6",
+      "name": "test",
+      "priority": "low",
+      "status": "done",
+      "completed": "99"
+    },
+    {
+      "id": "2497",
+      "name": "test",
+      "priority": "low",
+      "status": "done",
+      "completed": "80"
+    }
+  ]
+}

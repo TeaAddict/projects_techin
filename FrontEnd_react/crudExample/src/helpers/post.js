@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:5000/users";
+const url = import.meta.env.VITE_URL;
 
 export const postdata = async (data) => {
   //   try {

@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="h-[100vh] flex flex-col gap-4 py-5 bg-black text-white">
       <Form setUpdate={setUpdate} />
-      {!error && users && <UserList users={users} />}
+      {!error && users && <UserList users={users} setUpdate={setUpdate} />}
     </div>
   );
 }

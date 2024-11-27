@@ -1,10 +1,10 @@
 import User from "./User";
 
-const UserList = ({ users }) => {
+const UserList = ({ users, setUpdate }) => {
   return (
-    <div>
+    <div className="overflow-auto flex flex-col items-center">
       {users.map((user) => {
-        return <User user={user} key={user.id} />;
+        return <User user={user} setUpdate={setUpdate} key={user.id} />;
       })}
     </div>
   );

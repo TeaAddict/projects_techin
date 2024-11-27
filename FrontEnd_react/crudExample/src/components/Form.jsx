@@ -1,28 +1,37 @@
 import { useForm } from "react-hook-form";
 import { postdata } from "../helpers/post";
 import { useState } from "react";
+import { updateData } from "../helpers/update";
 
-const Form = ({ setUpdate }) => {
+const Form = ({ setUpdate, user }) => {
   const url = "http://localhost:5000/users/";
 
   const [error, setError] = useState("");
 
+  // const { username, email, channel } = user;
+
   const {
     register,
     handleSubmit,
-
     formState: { errors },
+    watch,
     reset,
   } = useForm({
-    defaultValues: { userName: "a", email: "as@zx.com", channel: "cc" },
+    defaultValues: {
+      username: user?.username || "",
+      email: user?.email || "",
+      channel: user?.channel || "",
+    },
   });
 
-  const handlePost = async (data) => {
+  const handleSubmitForm = async (data) => {
     try {
+      if (user) {
+        await updateData(user.id, data);
+      } else {
+        await postdata({ ...data, likes: 0 });
+      }
       setUpdate((update) => update + 1);
-      const response = await postdata({ ...data, likes: 0 });
-      console.log(response);
-      if (!response) throw new Error("Problem with request");
     } catch (error) {
       alert(error.message);
       setError(error.message);
@@ -30,22 +39,22 @@ const Form = ({ setUpdate }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(handlePost)} noValidate>
-        <div>
-          <label htmlFor="userName">User Name:</label>
+    <div className="flex justify-center">
+      <form onSubmit={handleSubmit(handleSubmitForm)} noValidate>
+        <div className="grid grid-cols-[1fr_2fr]">
+          <label htmlFor="username">User Name:</label>
           <input
             className="text-black"
             type="text"
-            id="userName"
-            {...register("userName", {
+            id="username"
+            {...register("username", {
               required: "User Name is required",
             })}
           />
-          <div className="error">{errors.userName?.message}</div>
+          <div className="error">{errors.username?.message}</div>
         </div>
 
-        <div>
+        <div className="grid grid-cols-[1fr_2fr]">
           <label htmlFor="email">User Email:</label>
           <input
             className="text-black"
@@ -76,7 +85,7 @@ const Form = ({ setUpdate }) => {
           <div className="error">{errors.email?.message}</div>
         </div>
 
-        <div>
+        <div className="grid grid-cols-[1fr_2fr]">
           <label htmlFor="channel">Favourite channel:</label>
           <input
             className="text-black"
@@ -86,7 +95,11 @@ const Form = ({ setUpdate }) => {
           />
         </div>
 
-        <input type="submit" value="Submit" />
+        <input
+          type="submit"
+          value="Submit"
+          className="border-2 border-white rounded-md px-2 py-1"
+        />
       </form>
       {error && <p className="text-red-600">{error}</p>}
     </div>
