@@ -1,46 +1,14 @@
 {
-  "tasks": [
+  "posts": [
     {
       "id": "a280",
-      "name": "Go to gym",
-      "priority": "high",
-      "status": "toDo",
-      "completed": 20
+      "title": "Go to gym",
+      "author": "Tomas"    
     },
     {
-      "id": "dc1a",
-      "name": "test",
-      "priority": "medium",
-      "status": "done",
-      "completed": "1"
-    },
-    {
-      "id": "36a3",
-      "name": "asdez",
-      "priority": "high",
-      "status": "inProgress",
-      "completed": "2"
-    },
-    {
-      "id": "eaf6",
-      "name": "test",
-      "priority": "low",
-      "status": "done",
-      "completed": "99"
-    },
-    {
-      "id": "2497",
-      "name": "test",
-      "priority": "low",
-      "status": "done",
-      "completed": "80"
-    },
-    {
-      "id": "2633",
-      "name": "eeee",
-      "priority": "low",
-      "status": "toDo",
-      "completed": "0"
+      "id": "a2820",
+      "title": "Go to dddd",
+      "author": "Petras"    
     }
   ]
 }
