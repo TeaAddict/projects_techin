@@ -1,39 +1,25 @@
 {
   "tasks": [
     {
-      "id": "a280",
-      "name": "Go to gym",
-      "priority": "medium",
-      "status": "toDo",
-      "completed": 20
-    },
-    {
-      "id": "dc1a",
+      "id": "4616",
       "name": "test",
-      "priority": "medium",
-      "status": "done",
-      "completed": "1"
-    },
-    {
-      "id": "36a3",
-      "name": "asdez",
       "priority": "high",
       "status": "inProgress",
-      "completed": "2"
+      "completed": 50
     },
     {
-      "id": "eaf6",
-      "name": "test",
-      "priority": "low",
+      "id": "f0f0",
+      "name": "zxc",
+      "priority": "medium",
       "status": "done",
-      "completed": "99"
+      "completed": 100
     },
     {
-      "id": "2497",
-      "name": "test",
+      "id": "bed9",
+      "name": "vvvv",
       "priority": "low",
-      "status": "done",
-      "completed": "80"
+      "status": "inProgress",
+      "completed": 50
     }
   ]
 }

@@ -6,15 +6,16 @@ import Modal from "./Modal";
 import Form from "./Form";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
+import { updateData } from "../helpers/update";
 
 const Task = ({ data, setIsUpdate }) => {
   const [isEditing, setIsEditing] = useState(false);
   const { id, name, priority, status, completed } = data;
 
   const priorities = {
-    high: { name: "High", color: "#fff" },
-    medium: { name: "Medium", color: "#fff" },
-    low: { name: "Low", color: "#fff" },
+    high: { value: "High", color: "#ec1b1b" },
+    medium: { value: "Medium", color: "#f8f54e" },
+    low: { value: "Low", color: "#68f14a" },
   };
   const statuses = { toDo: "To Do", inProgress: "In Progress", done: "Done" };
 
@@ -25,6 +26,21 @@ const Task = ({ data, setIsUpdate }) => {
   const handleDelete = async () => {
     try {
       await deleteData(id);
+      setIsUpdate((isUpdate) => isUpdate + 1);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const handleStatusChange = () => {
+    try {
+      let newTask = {};
+      if (status == "done") newTask = { ...data, status: "toDo", completed: 0 };
+      else if (status == "toDo")
+        newTask = { ...data, status: "inProgress", completed: 50 };
+      else newTask = { ...data, status: "done", completed: 100 };
+
+      updateData(id, newTask);
       setIsUpdate((isUpdate) => isUpdate + 1);
     } catch (error) {
       console.log(error.message);
@@ -46,7 +62,7 @@ const Task = ({ data, setIsUpdate }) => {
           <div>
             <p className="text-[#bdc4cc]">Priority</p>
             {priority && (
-              <p className={priorities[priority].color}>
+              <p className={`text-[${priorities[priority].color}] font-[500]`}>
                 {priorities[priority].value}
               </p>
             )}
@@ -54,9 +70,12 @@ const Task = ({ data, setIsUpdate }) => {
         </div>
         <div className="flex justify-center">
           {status && (
-            <p className="text-[#828b99] py-1 px-2 bg-[#eceef0] rounded-lg">
+            <button
+              onClick={handleStatusChange}
+              className="text-[#828b99] py-1 px-2 bg-[#eceef0] rounded-lg"
+            >
               {statuses[status]}
-            </p>
+            </button>
           )}
         </div>
 
