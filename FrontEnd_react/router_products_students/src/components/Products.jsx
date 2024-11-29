@@ -1,19 +1,22 @@
 import { useEffect, useState } from "react";
-import { getAll } from "../helpers/get";
+import { getAll } from "../helpers/product/get";
 import Product from "./Product";
+import { useParams } from "react-router";
 
 const Products = () => {
   const [products, setProducts] = useState();
+  const { category } = useParams();
 
   const handleGetProducts = async () => {
-    setProducts(await getAll());
+    const res = await getAll();
+    const filtered = res.filter((product) => product.category == category);
+    setProducts(filtered);
   };
 
   useEffect(() => {
     handleGetProducts();
-  }, []);
+  }, [category]);
 
-  console.log(products);
   if (!products) return <p>Error loading page</p>;
   return (
     <div className="flex flex-col gap-2">
