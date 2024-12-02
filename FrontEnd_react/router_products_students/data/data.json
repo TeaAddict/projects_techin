@@ -2,13 +2,50 @@
   "products": [
     {
       "id": "a2820",
+      "category": "fruit",
       "name": "Apple",
-      "price": "12$"    
+      "price": "12$",
+      "description": "Greatest apple product in the market"
+    },
+    {
+      "id": "a28202",
+      "category": "fruit",
+      "name": "Orange",
+      "price": "33$",
+      "description": "Greatest apple product in the market"
     },
     {
       "id": "a280",
+      "category": "drink",
       "name": "Cola",
-      "price": "22$"    
+      "price": "22$",
+      "description": "Greatest cola product in the market"
+    }
+  ],
+  "messages": [
+    {
+      "id": "123",
+      "name": "test",
+      "email": "asd@a.com",
+      "message": "zxc"
+    },
+    {
+      "id": "4377",
+      "name": "qwe",
+      "email": "a@a.com",
+      "message": "zzz"
+    },
+    {
+      "id": "d7f7",
+      "name": "zxc",
+      "email": "a@zx.com",
+      "message": "ppp"
+    },
+    {
+      "id": "bdbd",
+      "name": "zzz",
+      "email": "p@c.com",
+      "message": "llplpl"
     }
   ]
 }

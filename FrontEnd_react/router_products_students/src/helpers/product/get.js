@@ -8,6 +8,6 @@ export const getAll = async () => {
 getAll;
 
 export const getOne = async (id) => {
-  return (await axios.get(`${url}/${id}`)).data;
+  return (await axios.get(`${url}?id=${id}`)).data[0];
 };
 getOne;
